@@ -1,0 +1,89 @@
+:root {
+--primary-text-color: #212121;/*Цвет текста*/
+--card-list-gap: 20px; /*Отспуп между элементами сетки*/ 
+--card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+0px 1px 3px 0px rgba(0, 0, 0, 0.12);/*Тень на карточках*/
+}
+body {
+    background-color: #fff;
+    color: var(--primary-text-color);
+    line-height: 1.5;
+    font-family: Raleway;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+img {
+    display: block; /*делает картинки блочным элементом, убирает отступ снизу как у строчных элементов*/
+    max-width: 100%; /*все картинки могут быть меньше, но не больше размера элемента*/
+    height: auto;
+}
+/*===CONTAINER===*/
+.container {
+width: 960px;
+margin-left: auto;/*центрирование контейнера*/
+margin-right: auto;
+padding-left: 15px; /*паддинги для отступа с краев для читабельности*/
+padding-right: 15px;
+background-color: rgb(241, 241, 241);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* CARD LIST*/
+.card-list {
+    display: flex; /*создает флекс-бокс и распол-т єлементі в ряд*/
+    flex-wrap: wrap; /*делает флекс-бокс многострочным и переносит невлезающие элементы на новую строку*/
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: calc(-1 * var(--card-list-gap));/*задаем отриц.марджины для компенсации выпирания элементов*/
+    margin-left: calc(-1 * var(--card-list-gap));
+    /* outline: 1px solid tomato; */
+}
+/* CARD ITEM*/
+.card {
+box-shadow: var(--card-shadow);
+border-radius: 5px;
+overflow: hidden; /*скругляет карточки сверху - убирает переполнение картинкой контейнера*/
+}
+
+.card:hover,
+.card:focus {
+  border: 1px solid #EEEEEE;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+cursor: pointer;
+}
+
+.card-list > .card-item {
+    flex-basis: calc(100% / 3 - 20px);/*задает сколько элементов будет в строке сетки*/
+    /* формула = треть (кол-во эл-тов) ширины родителя - один марджин (20рх)*/
+    margin-left: 20px; /*задаем отступы между элементами*/
+    margin-top: 20px; /*задаем отступы между элементами*/
+    /* outline: 1px solid teal; */
+}
+
+.card-item * {
+        /* outline: 1px solid tomato; */
+}
+
+.card-thumb {
+   /* height: 300px; */
+   
+}
+
+.card-text {
+    margin-top: 10px;
+}
+
+.card-content {
+padding: 15px; /*паддинг внутри текстовой части карточки*/
+}
